@@ -4,10 +4,10 @@ This is a data pipe line sample implementation in Cloudera Hadoop using Spark, H
 1) This code sorts all metropolitan statistical areas (MSAs) in the United States by wettest population during May of 2015. The population wetness of an MSA is calculated as the number of people in the MSA times the amount of rain received. For the purposes of this exercise,We  assumed that all people remain inside between the hours of 12 AM and 7 AM local time and so rainfall during these hours does not count. 
 
 2) These are the files included in addtion to the scala class that you will need to use compile this code. 
-srcCityStateMsa : This is the City_State_MSA data ausumed to be present at Edge node
-srcPopMsa: This is the Population and MSA data ausumed to be present at Edge node
-srcPrecipitation: This is the precipitation data by StationID ausumed to be present at Edge node
-station_landing : This is the station ID to City,State information. 
+city_state_msa_fixed.txt : This is the City_State_MSA data ausumed to be present at Edge node
+cbsa-est2016-alldata_cleaned.csv : This is the Population and MSA data ausumed to be present at Edge node
+201505precip.txt : Please download this from link below
+station.txt : Please download this from link below
 Source of these data sets :  http://www.ncdc.noaa.gov/orders/qclcd/QCLCD201505.zip	
 
 3) copy_file.sh : Shell script to copy the files from Edge node to HDFS
