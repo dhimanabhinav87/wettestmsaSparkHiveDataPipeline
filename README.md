@@ -15,6 +15,7 @@ This is a data pipe line sample implementation in Cloudera Hadoop using Spark, H
 5) final_project_workflow.sh : Defines the workflow and executes the full data pipeline.Please change these according to your directory structure.
 6) param_conf :Parameters for spark-submit for the locations of data file. Please change these according to your directory structure.Ignore STATION_LOCAL_PATH variable as this needs to be passed with spark-submit arguments due to current implementation.
 7) pom.xml: Dependency file for scala spark.
+ 8) WettestMsaYearMonth.scala:The scala code that implements the functionality
 
  Thank You! 
  Abhinav Dhiman
