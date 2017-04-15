@@ -1,0 +1,41 @@
+#!/bin/bash
+##
+#@(#)*************************************************************************************
+#@(#)** FILE NAME     : sample_Config
+#@(#)**
+#@(#)** CREATION DATE : 04/15/2017
+#@(#)** VERSION       : 1.0
+#@(#)**
+#@(#)** DESCRIPTION :
+#@(#)**  Loading parameter script
+#@(#)**
+#@(#)** PARAMETERS  : none
+#@(#)**      
+#@(#)**
+#@(#)*************************************************************************************
+#@(#)** MODIFICATIONS HISTORY :
+#@(#)**
+#@(#)**  Date         Name           	Change
+#@(#)**  ----------   --------------    ---------------
+#@(#)**  12/09/2016   adhiman    Initial version
+#@(#)*************************************************************************************
+
+NAME_NODE_URL='hdfs://quickstart.cloudera:8020'
+HIVE_METASTORE_URL='quickstart.cloudera:9083'
+HIVE_FACT_DB='example'
+LANDING_PRECIPITATION='/user/cloudera/sparkproject/landing/precipitation/*.txt'
+LANDING_CITY_STATE_MSA='/user/cloudera/sparkproject/landing/city_state_msa/*.txt'
+LANDING_POP_MSA='/user/cloudera/sparkproject/landing/msa_pop/*.csv'
+CONF='/user/cloudera/sparkproject/conf/'
+OUTPUT_PATH='/user/cloudera/sparkproject/output/wettestpopulation'
+STATION_LOCAL_PATH='/user/cloudera/sparkproject/data/201505station.txt'
+
+#
+p_numReducers=1
+p_numInputPartitions=1
+
+
+#--------------------------
+#EMAIL parameters
+#--------------------------
+#EMAIL_ADDRESS=

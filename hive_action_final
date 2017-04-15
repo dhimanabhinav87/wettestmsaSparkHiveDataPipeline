@@ -1,0 +1,40 @@
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+set hive.exec.max.dynamic.partitions.pernode=1000;
+
+use training;
+
+DROP TABLE IF EXISTS training.wettestpopulation_ext;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS training.wettestpopulation_ext(
+msa STRING,
+population STRING,
+year STRING,
+month STRING,
+totalrainfall double,
+wettestpopulation double)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE
+location '/user/cloudera/sparkproject/output/wettestpopulation/';
+
+
+CREATE TABLE IF NOT EXISTS training.wettestpopulation(
+msa STRING,
+population STRING,
+totalrainfall double,
+wettestpopulation double
+)
+PARTITIONED BY (year STRING,month STRING)
+STORED AS PARQUET;
+
+INSERT OVERWRITE TABLE training.wettestpopulation PARTITION (year, month)
+SELECT msa,
+population,
+totalrainfall,
+wettestpopulation,
+year,
+month
+FROM wettestpopulation_ext;
+
+ 
